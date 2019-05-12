@@ -2,7 +2,7 @@
 	include("LIB_parse.php");
 	include("LIB_http.php");
 
-	$web_page = http_get($target="http://www.phila.gov", $referer="");
+	$web_page = http_get($target="http://www.guarantee.edu", $referer="");
 	$open_tag = "<li";
 	$close_tag = "</li>";
 	$remove_array = parse_array($web_page['FILE'], $open_tag, $close_tag);
