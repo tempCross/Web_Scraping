@@ -2,7 +2,7 @@
 	include("LIB_parse.php");
 	include("LIB_http.php");
 
-	$web_page = http_get($target="http://www.fbi.gov", $referer="");
+	$web_page = http_get($target="http://www.guarantee.edu", $referer="");
 
 	$meta_tag_array = parse_array($web_page['FILE'], "<meta", ">");
 
