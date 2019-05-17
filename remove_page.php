@@ -2,7 +2,11 @@
 	include("LIB_parse.php");
 	include("LIB_http.php");
 
+<<<<<<< HEAD
 	$web_page = http_get($target="http://www.cnn.com", $referer="");
+=======
+	$web_page = http_get($target="http://www.guarantee.edu", $referer="");
+>>>>>>> dd7594d0876c4a6a95f2f1fbe13a6663b1faec45
 	$open_tag = "<li";
 	$close_tag = "</li>";
 	$remove_array = parse_array($web_page['FILE'], $open_tag, $close_tag);
@@ -30,4 +34,8 @@
     echo $web_page['FILE'];
    
     
+<<<<<<< HEAD
+=======
+
+>>>>>>> dd7594d0876c4a6a95f2f1fbe13a6663b1faec45
 ?>
