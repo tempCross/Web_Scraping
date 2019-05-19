@@ -5,7 +5,7 @@ Copyright 2007, Michael Schrenk
    This software is designed for use with the book,                                                             
    "Webbots, Spiders, and Screen Scarpers", Michael Schrenk, 2007 No Starch Press, San Francisco CA             
                                                                                                                 
-W3C® SOFTWARE NOTICE AND LICENSE                                                                                
+W3CÂ® SOFTWARE NOTICE AND LICENSE                                                                                
                                                                                                                 
 This work (and included software, documentation such as READMEs, or other                                       
 related items) is being provided by the copyright holders under the following license.                          
@@ -63,8 +63,8 @@ MySQL Constants (scope = global)
 ----------------------------------------------------------------------*/
 define("MYSQL_ADDRESS", "localhost");          // Define the IP address of your MySQL Server
 define("MYSQL_USERNAME", "root");         // Define your MySQL user name
-define("MYSQL_PASSWORD", "Comcast99!");         // Define your MySQL password
-define("DATABASE", "priceScrapebot");               // Define your default database
+define("MYSQL_PASSWORD", "");         // Define your MySQL password
+define("DATABASE", "");               // Define your default database
 define("SUCCESS", true);              // Successful operation flag
 define("FAILURE", false);             // Failed operation flag
 
