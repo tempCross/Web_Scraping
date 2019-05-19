@@ -61,8 +61,8 @@ documentation will at all times remain with copyright holders.
 /***********************************************************************
 MySQL Constants (scope = global)                                        
 ----------------------------------------------------------------------*/
-define("MYSQL_ADDRESS", "localhost");          // Define the IP address of your MySQL Server
-define("MYSQL_USERNAME", "root");         // Define your MySQL user name
+define("MYSQL_ADDRESS", "");          // Define the IP address of your MySQL Server
+define("MYSQL_USERNAME", "");         // Define your MySQL user name
 define("MYSQL_PASSWORD", "");         // Define your MySQL password
 define("DATABASE", "");               // Define your default database
 define("SUCCESS", true);              // Successful operation flag
