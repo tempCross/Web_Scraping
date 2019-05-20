@@ -2,10 +2,10 @@
 # Initialization
 include("LIB_parse.php");
 include("LIB_http.php");
+include("LIB_mysql.php");
 $product_array=array();
 $product_count=0;
 $heading_cell=0;
-
 $target = "http://www.WebbotsSpidersScreenScrapers.com/buyair";
 $web_page = http_get($target, "");
 
@@ -35,6 +35,7 @@ for($xx=0; $xx<count($table_array); $xx++)
 											$price_column=$heading_cell;
 									}
 								echo "FOUND: id_column=$id_column\n";
+								echo gettype($id_column)."\n";
 								echo "FOUND: price_column=$price_column\n";
 								echo "FOUND: name_column=$name_column\n";
 								# Save the heading row for later
@@ -52,12 +53,23 @@ for($xx=0; $xx<count($table_array); $xx++)
 							{
 								$table_cell_array = parse_array($product_row_array[$table_row], "<td", "</td>");
 								$product_array[$product_count]['ID'] = strip_tags(trim($table_cell_array[$id_column]));
+								$value = $product_array[$product_count]['ID'];
+								$data_array['ID'] = $value; 
 								$product_array[$product_count]['NAME'] = strip_tags(trim($table_cell_array[$name_column]));
+								$value = $product_array[$product_count]['NAME'];
+								#echo "This is product_array[product_count]['NAME'] ".$value."\n";
+								#echo gettype($value)."\n";
+								$data_array['NAME'] = $value; 
 								$product_array[$product_count]['PRICE'] = strip_tags(trim($table_cell_array[$price_column]));
+								$value = $product_array[$product_count]['PRICE'];
+								$data_array['PRICE'] = $value;
+								#var_dump($data_array);
+								insert(DATABASE, $table="priceMon", $data_array);
 								$product_count++;
 								echo "PROCESSED: Item #$product_count\n";
 
 							}
+
 						# Display the collected data
 						for ($xx=0; $xx<count($product_array); $xx++)
 							{
@@ -65,7 +77,9 @@ for($xx=0; $xx<count($table_array); $xx++)
 								echo "ID: ".$product_array[$xx]['ID'].", ";
 								echo "NAME: ".$product_array[$xx]['NAME'].", ";
 								echo "PRICE: ".$product_array[$xx]['PRICE']."\n";
+
 							}
+
 					}
 				}
 	}
